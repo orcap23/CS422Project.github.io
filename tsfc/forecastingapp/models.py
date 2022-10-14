@@ -1,3 +1,3 @@
 from django.db import models
 
-# Create your models here.
+#A Django model is a table in your database.
