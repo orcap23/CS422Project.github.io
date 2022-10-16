@@ -15,9 +15,9 @@ make sure your python3 version up to 3.9 pip3 up to 22
 
 $ cs tsfc
 
-$ pipenv install django
+$ pip3 or pipenv install django
 
-$ pipenv shell
+$ pip3 or pipenv shell
 
 run :
 $ python3 manage.py runserver
