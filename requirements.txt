@@ -1,0 +1,5 @@
+Python - 3.9 at minimum
+Pip - 22.2.2 at minimum
+Django - pip3 install django
+Pipenv 
+Shell 
