@@ -15,7 +15,8 @@ make sure your python3 version up to 3.9 pip3 up to 22
 
 $ cs tsfc
 
-The user can use pip3 or pipenv, if the user doens't understand pipenv, use pip3. 
+The user can use pip3 or pipenv, if the user doens't understand pipenv, use pip3.
+
 $ pip3 or pipenv install django
 
 $ pip3 or pipenv shell
