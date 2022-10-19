@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 #This file for uploading solution and compute compare between test set and solution.
 #The solution file will be little different between train set.
+=======
+>>>>>>> 74ec6d3 (download can work now)
 from math import sqrt
 import csv
 
 data_list = []
+<<<<<<< HEAD
 with open('test.csv', newline="") as f:
+=======
+with open('1_temperature_test.csv', newline="") as f:
+>>>>>>> 74ec6d3 (download can work now)
     reader = csv.reader(f)
     for row in reader:
         data_list.append(row[0])
@@ -15,7 +22,11 @@ with open('test.csv', newline="") as f:
         test_list.append(float(item))
     data_list = []
 
+<<<<<<< HEAD
 with open('train.csv', newline="") as f:
+=======
+with open('1_temperature_train.csv', newline="") as f:
+>>>>>>> 74ec6d3 (download can work now)
     reader = csv.reader(f)
     for row in reader:
         data_list.append(row[0])

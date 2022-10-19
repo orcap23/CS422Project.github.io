@@ -24,8 +24,7 @@ urlpatterns = [
     path('forecastingapp/', include('forecastingapp.urls')),
     path('__debug__/', include('debug_toolbar.urls')),
     path('download/',views.downloadtrainset),
-    path('filelist/', views.file_list),
-    path('fileupload/', views.file_upload),
+    path('file/', include("file_upload.urls")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
