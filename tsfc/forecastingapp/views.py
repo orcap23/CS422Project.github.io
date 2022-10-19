@@ -1,11 +1,22 @@
+import os
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.db import transaction
+from django.http import HttpResponse, Http404, FileResponse
 
 def say_sth(request):
     return render(request, 'index.html', {'name': 'Team 2!!!'})
 
-def upload_file(request, pk):
-    return 0
+#Handle download train set from the website.
+def downloadtrainset(request):
+    try:
+        
+        file = open('forecastingapp/templates/static/download/train.csv', 'rb')
+        response = FileResponse(file)
+        response['content_type'] = "application/octet-stream"
+        response['Content-Disposition'] = 'attachment; filename="train.csv"'
+        return response
+    except Exception as e:
+        print(e)
+        raise Http404
+
 
 
