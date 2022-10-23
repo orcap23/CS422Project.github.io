@@ -1,29 +1,15 @@
 from django.db import models
+import os
+import uuid
 
-#https://docs.djangoproject.com/en/4.1/topics/db/models/
-#https://stackoverflow.com/questions/17821400/regex-match-for-domain-name-in-django-model
+def user_directory_path(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = '{}.{}'.format(uuid.uuid4().hex[:10], ext)
+    return os.path.join("files", filename)
 
-#model will handle the table after upload the file, I will finish it on Friday I believe.
-#The table needs to update each time after upload.
-#First row will be like Upload_Name, MAE, MAPE,....
-#Table needs to be show on the second page after MLE click the link in the main page.
-#The main page needs to have a table contain TS_name, Link.
-
-class Tsmetadata(models.Model):
-    tsname = models.CharField(max_length=255, primary_key=True)
-    description = models.TextField()
-    domain = models.CharField(max_length=255)
-    units = models.IntegerField()
-    keywords = models.CharField(max_length=255)
-    scalar = models.IntegerField()
-    Length = models.IntegerField()
-    SamplingPeriod = models.DecimalField(max_digits=6, decimal_places=2)
-
-class Tsdata(models.Model):
-    date = models.DateField(null=True)
-    time = models.IntegerField()
-    magnitude = models.DecimalField(max_digits=6, decimal_places=2)
-    tstime = models.OneToOneField(Tsmetadata, on_delete=models.CASCADE)
+class File(models.Model):
+    file = models.FileField(upload_to=user_directory_path, null=True)
+    upload_method = models.CharField(max_length=20, verbose_name="Upload Method")
 
 
 
