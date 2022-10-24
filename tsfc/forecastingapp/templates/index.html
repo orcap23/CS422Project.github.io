@@ -1,11 +1,32 @@
 <html>
   <body>
-    {% if name %}
-    <h1>Hello {{name }}</h1>
-    {% else %}
-    <h1>lalalal</h1>
-    {% endif %}
-    <a href="/download" style="color: blue; font-size: 40px">DownLoad</a>
+    <!--{% if name %}-->
+    <style>
+      body {
+        font-family: Georgia,serif;
+        font-size: 100%;
+        list-style: 100%;
+        line-height: 100%;
+        background-position: center 100px;
+        margin: 0 15% 0;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background-color:#a2d2df;
+        
+      }
+    </style>
+    <center>
+
+    <h1 style="font-size:70px;"> Hello user :)</h1>
+    <!--{% else %}-->
+    <h1 style="font-size:60px;">Time Series Info</h1>
+    <p> Our time series is based off of the UC Irvine covid tags.<br>
+     The domains include times students are on campus, and how often they come into contact with other students.<br>
+    Units include hours for the time and number of students.<br>Our scalar is univariant since we are just measuring the times
+  people came into contact<br>Sampling period was over months</p>
+    <!--{% endif %}-->
+    <a href="/download" style="color: blue; font-size: 30px">Download repo</a>
     <h2>----------------------------</h2>
+    <a href="/filelist">File list form!</a>
+    </center>
   </body>
 </html>
