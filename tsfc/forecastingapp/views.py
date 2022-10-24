@@ -19,7 +19,3 @@ def downloadtrainset(request):
     except Exception as e:
         print(e)
         raise Http404
-<<<<<<< HEAD
-=======
-
->>>>>>> 3f5e82c (add style to index.html)

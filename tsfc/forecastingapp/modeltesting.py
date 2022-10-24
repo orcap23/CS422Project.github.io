@@ -1,10 +1,6 @@
 
 #This file for uploading solution and compute compare between test set and solution.
 #The solution file will be little different between train set.
-
-#This file for uploading solution and compute compare between test set and solution.
-#The solution file will be little different between train set.
-
 from math import sqrt
 import csv
 
@@ -23,6 +19,7 @@ with open('test.csv', newline="") as f:
     data_list = []
 
 with open('train.csv', newline="") as f:
+
     reader = csv.reader(f)
     for row in reader:
         data_list.append(row[0])
