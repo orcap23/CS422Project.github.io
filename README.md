@@ -13,13 +13,19 @@ $ cd CS422Project.github.io
 
 make sure your python3 version up to 3.9 pip3 up to 22
 
-$ cs tsfc
+$ cd tsfc
+
+$ pipenv shell
 
 $ pipenv install django
 
-$ pipenv shell
+$ python manage.py makemigrations
+
+$ python manage.py migrate
 
 run :
 $ python3 manage.py runserver
 
-http://127.0.0.1:8000/forecastingapp/ <--->open in Firefox.
+http://127.0.0.1:8000/forecastingapp/ <---> for download training set.
+
+http://127.0.0.1:8000/file/ <---> for upload solution file.

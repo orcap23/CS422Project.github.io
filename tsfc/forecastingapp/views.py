@@ -19,4 +19,8 @@ def downloadtrainset(request):
     except Exception as e:
         print(e)
         raise Http404
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 3222a7a9f1f6f13e2e6b052a3b7f7074f5dee327
