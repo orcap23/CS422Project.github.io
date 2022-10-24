@@ -9,6 +9,7 @@ def say_sth(request):
 
 
 #Handle download train set from the website.
+#try: expect: contain all errors on 'Exception'. for this syntax is all
 def downloadtrainset(request):
     try:
         file = open('forecastingapp/templates/static/download/train.csv', 'rb')

@@ -1,4 +1,10 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+#This file for uploading solution and compute compare between test set and solution.
+#The solution file will be little different between train set.
+=======
 
+=======
 #This file for uploading solution and compute compare between test set and solution.
 #The solution file will be little different between train set.
 from math import sqrt
