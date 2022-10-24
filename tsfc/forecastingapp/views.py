@@ -7,6 +7,8 @@ from django.template.defaultfilters import filesizeformat
 def say_sth(request):
     return render(request, 'index.html', {'name': 'Team 2!!!'})
 
+
+#Handle download train set from the website.
 def downloadtrainset(request):
     try:
         file = open('forecastingapp/templates/static/download/train.csv', 'rb')
@@ -17,7 +19,4 @@ def downloadtrainset(request):
     except Exception as e:
         print(e)
         raise Http404
-
-
-
-
+        
