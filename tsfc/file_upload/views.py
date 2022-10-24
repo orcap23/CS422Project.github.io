@@ -5,9 +5,10 @@ import os
 import uuid
 from django.http import JsonResponse
 from django.template.defaultfilters import filesizeformat
+from django.views.generic import TemplateView, ListView, CreateView
+from django.core.files.storage import FileSystemStorage
 
 # Show file list
-#, {'files': files}
 def file_list(request):
     #files = File.objects.all().order_by("-id")
     files = File.objects.order_by('-id')   
@@ -33,6 +34,11 @@ def file_upload(request):
                   {'form': form, 'heading': 'Upload files with Regular Form'}
                  )
 
+def delete_file(request, pk): 
+    if request.method == "POST":
+        file = File.objects.get(pk = pk)
+        file.delete()
+    return render(request, 'file_list.html')
 
 def handle_uploaded_file(file):
     ext = file.name.split('.')[-1]
@@ -51,3 +57,4 @@ def handle_uploaded_file(file):
             destination.write(chunk)
 
     return file_path
+
