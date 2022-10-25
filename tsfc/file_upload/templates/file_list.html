@@ -16,7 +16,11 @@
       <td>{{ file.size | filesizeformat }}</td>
       <td>{{ file.upload_method }}</td>
       <td>
-        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+        <a href="{% url 'file_upload:delete_file' file.id %}"
+          ><button type="submit" class="btn btn-danger btn-sm">
+            Delete
+          </button></a
+        >
       </td>
     </tr>
     {% endfor %}
