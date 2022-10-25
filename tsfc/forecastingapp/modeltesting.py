@@ -5,7 +5,7 @@ import csv
 
 data_list = []
 
-with open('test.csv', newline="") as f:
+with open('templates/static/download/train.csv', newline="") as f:
 
     reader = csv.reader(f)
     for row in reader:
@@ -17,7 +17,7 @@ with open('test.csv', newline="") as f:
         test_list.append(float(item))
     data_list = []
 
-with open('train.csv', newline="") as f:
+with open('../../UploadedFile/temp_test.csv', newline="") as f:
 
     reader = csv.reader(f)
     for row in reader:
