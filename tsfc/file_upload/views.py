@@ -10,8 +10,7 @@ from django.template.defaultfilters import filesizeformat
 #, {'files': files}
 def file_list(request):
     #files = File.objects.all().order_by("-id")
-    files = File.objects.order_by('-id')
-    #print("dddd",files)
+    files = File.objects.order_by('-id')   
     return render(request, 'file_list.html', {'files': files})
 
 # Regular file upload without using ModelForm
@@ -34,6 +33,7 @@ def file_upload(request):
                   {'form': form, 'heading': 'Upload files with Regular Form'}
                  )
 
+
 def handle_uploaded_file(file):
     ext = file.name.split('.')[-1]
     file_name = '{}.{}'.format(uuid.uuid4().hex[:10], ext)
@@ -41,7 +41,7 @@ def handle_uploaded_file(file):
     # file path relative to 'solutions' folder
     file_path = os.path.join('solutions', file_name)
     absolute_file_path = os.path.join('solutions', 'files', file_name)
-
+   
     directory = os.path.dirname(absolute_file_path)
     if not os.path.exists(directory):
         os.makedirs(directory)
