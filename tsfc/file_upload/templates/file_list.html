@@ -1,19 +1,17 @@
 {% block content %}
-<h3>File List</h3>
-<p><a href="/file/upload/">FormUploaded</a></p>
+<h1>Solution list for MLE</h1>
+<h3><a href="/file/upload/">Solution Upload Here </a></h3>
 {% if files %}
 <table class="table table-striped">
   <tbody>
     <tr>
       <td>Filename</td>
-      <td>Filesize</td>
-      <td>Upload Method</td>
+      <td>MLEname</td>
       <td>Delete</td>
     </tr>
     {% for file in files %}
     <tr>
       <td><a href="{{ file.file.url }}">{{ file.file.url }}</a></td>
-      <td>{{ file.size | filesizeformat }}</td>
       <td>{{ file.upload_method }}</td>
       <td>
         <a href="{% url 'file_upload:delete_file' file.id %}"
