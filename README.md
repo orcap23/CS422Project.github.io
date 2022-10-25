@@ -19,6 +19,8 @@ $ pipenv shell
 
 $ pipenv install django
 
+$ pipenv install django-cleanup
+
 $ python3 manage.py makemigrations
 
 $ python3 manage.py migrate
