@@ -38,7 +38,8 @@ def delete_file(request, pk):
     file = File.objects.get(id = pk)
     file.delete()
     return redirect("/file/")
-    
+
+
 
 def handle_uploaded_file(file):
     ext = file.name.split('.')[-1]
@@ -57,4 +58,3 @@ def handle_uploaded_file(file):
             destination.write(chunk)
 
     return file_path
-

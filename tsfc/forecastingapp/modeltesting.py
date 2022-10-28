@@ -2,10 +2,22 @@
 #The solution file will be little different between train set.
 from math import sqrt
 import csv
+import os
+import datetime
 
 data_list = []
 
-with open('templates/static/download/train.csv', newline="") as f:
+#findnewestfile for find the newest upload file and return file path.
+def findnewestfile(uploadfiledir):
+    list = os.listdir(uploadfiledir)
+    list.sort(key=lambda fn:os.path.getmtime(uploadfiledir + '/' +fn))
+    filetime = datetime.datetime.fromtimestamp(os.path.getmtime(uploadfiledir+list[-1]))
+    filepath = os.path.join(uploadfiledir,list[-1])
+    return filepath
+
+newestfilepath = str(findnewestfile("tsfc/solutions/files/"))
+
+with open(newestfilepath, newline="") as f:
 
     reader = csv.reader(f)
     for row in reader:
@@ -17,7 +29,7 @@ with open('templates/static/download/train.csv', newline="") as f:
         test_list.append(float(item))
     data_list = []
 
-with open('../../UploadedFile/temp_test.csv', newline="") as f:
+with open('UploadedFile/temp_test.csv', newline="") as f:
 
     reader = csv.reader(f)
     for row in reader:
@@ -41,7 +53,7 @@ def MAE(test, train):
 
     return mae
 
-# print(MAE(test_list, train_list))
+#print(MAE(test_list, train_list))
 
 "Mean Average Percentage Error"
 def MAPE(test, train):
@@ -59,7 +71,7 @@ def MAPE(test, train):
 
     return mape * 100
 
-# print(MAPE(test_list, train_list))
+#print(MAPE(test_list, train_list))
 
 """Symmetric Mean Average Percentage Error"""
 def SMAPE(test, train):
@@ -98,7 +110,7 @@ def MSE(test, train):
 def RMSE(test, train):
     return sqrt(MSE(test, train))
 
-# print(RMSE(test_list, train_list))
+#print("RMSE", RMSE(test_list, train_list))
 
 """Average of a List"""
 def AVE(t_list):
@@ -126,4 +138,8 @@ def COCO(test, train):
     
     return (summation_up) / sqrt(summation_bot_one * summation_bot_two)
 
-# print(COCO(train_list, test_list))
+print(COCO(train_list, test_list))
+
+
+
+

@@ -7,9 +7,9 @@
         list-style: 100%;
         line-height: 100%;
         background-position: center 100px;
-        margin: 0 15% 0;
+        margin: 0 35% 0;
         font-family: Georgia, "Times New Roman", Times, serif;
-        background-color: #a2d2df;
+        background-color: #f0e4dd;
       }
     </style>
     {% if name %}
@@ -17,16 +17,35 @@
     {% else %}
     <h1>lalalal</h1>
     {% endif %}
-    <h1 style="font-size: 60px">Time Series Info</h1>
-    <p>
-      Our time series is based off of the UC Irvine covid tags.<br />
-      The domains include times students are on campus, and how often they come
-      into contact with other students.<br />
-      Units include hours for the time and number of students.<br />Our scalar
-      is univariant since we are just measuring the times people came into
-      contact<br />Sampling period was over months
-    </p>
-    <a href="/download" style="color: blue; font-size: 30px">Download repo</a>
+    <h4>Repo list with download link</h4>
+    <table border="1">
+      <tr>
+        <th>Datasets</th>
+        <td>Download & UploadToEvaluate</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Temperature</th>
+        <td>
+          <a href="/download"><button>Download Repo</button></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/file">Upload & Evaluate</a>
+        </td>
+      </tr>
+      <tr>
+        <th rowspan="2">Earthquake</th>
+        <td>
+          <a href="/download"><button>Download Repo</button></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/file">Upload & Evaluate</a>
+        </td>
+      </tr>
+    </table>
     <h2>----------------------------</h2>
   </body>
 </html>

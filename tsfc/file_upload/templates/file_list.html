@@ -1,4 +1,52 @@
 {% block content %}
+<style>
+  body {
+    font-family: Georgia, serif;
+    font-size: 100%;
+    list-style: 100%;
+    line-height: 100%;
+    background-position: center 100px;
+    margin: 0 35% 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background-color: #f0e4dd;
+  }
+</style>
+<table>
+  <caption>
+    <h1><b>MetaData</b></h1>
+  </caption>
+  <tr>
+    <th>DataInfo</th>
+    <th>Data</th>
+  </tr>
+  <tr>
+    <td>TS name</td>
+    <td>Temperature</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>somthing....</td>
+  </tr>
+  <tr>
+    <td>Domain</td>
+    <td>somthing....</td>
+  </tr>
+  <tr>
+    <td>Units</td>
+    <td>somthing....</td>
+  </tr>
+  <tr>
+    <td>Keywords</td>
+    <td>somthing....</td>
+  </tr>
+  <tr>
+    <td>Sampling Period</td>
+    <td>somthing....</td>
+  </tr>
+</table>
+<h1>Forecasting Task</h1>
+
+<h1>----------------------------</h1>
 <h1>Solution list for MLE</h1>
 <h3><a href="/file/upload/">Solution Upload Here </a></h3>
 {% if files %}
@@ -7,12 +55,14 @@
     <tr>
       <td>Filename</td>
       <td>MLEname</td>
+      <td>Evaluated Value</td>
       <td>Delete</td>
     </tr>
     {% for file in files %}
     <tr>
       <td><a href="{{ file.file.url }}">{{ file.file.url }}</a></td>
       <td>{{ file.upload_method }}</td>
+      <td><h4>computed value here update</h4></td>
       <td>
         <a href="{% url 'file_upload:delete_file' file.id %}"
           ><button type="submit" class="btn btn-danger btn-sm">
@@ -24,6 +74,7 @@
     {% endfor %}
   </tbody>
 </table>
+
 {% else %}
 <p>
   No files uploaded yet. Please click
