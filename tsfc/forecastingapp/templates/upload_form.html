@@ -1,12 +1,30 @@
-{% block content %} {% if heading %}
-<h3>{{ heading }}</h3>
-{% endif %}
-
-<form action="" method="post" enctype="multipart/form-data">
-  {% csrf_token %} {{ form.as_p }}
-  <button class="btn btn-info form-control" type="submit" value="submit">
-    Upload
-  </button>
-</form>
-
-{% endblock %}
+<html>
+  <body>
+    <style>
+      body {
+        font-family: Georgia, serif;
+        font-size: 100%;
+        list-style: 100%;
+        line-height: 100%;
+        background-position: center 100px;
+        margin: 0 15% 0;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background-color: #a2d2df;
+      }
+    </style>
+    {% if name %}
+    <h1>Hello {{name }}</h1>
+    {% else %}
+    <h1>lalalal</h1>
+    {% endif %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
+        <button class="btn btn-info form-control" type="submit" value="submit">
+          Choose file
+        </button>
+      </form>
+    
+    
+    <h2>----------------------------</h2>
+  </body>
+</html>
