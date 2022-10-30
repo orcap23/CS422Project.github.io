@@ -16,8 +16,6 @@ def findnewestfile(uploadfiledir):
 
 filename = os.path.split(findnewestfile("../tsfc/solutions/files/"))[1]
 newestfilepath = str(findnewestfile("../tsfc/solutions/files/"))
-if filename[-3:-1] != "csv":
-    raise Exception("Must upload file in .csv format.")
 
 def testandtrain(newestfilepath):
     with open('./file_upload/train.csv', newline="") as f:
