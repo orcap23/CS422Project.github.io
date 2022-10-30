@@ -49,20 +49,27 @@
 <h1>----------------------------</h1>
 <h1>Solution list for MLE</h1>
 <h3><a href="/file/upload/">Solution Upload Here </a></h3>
+<br>
+<h1><u>Test Set Results</u></h1>
 {% if files %}
 <table class="table table-striped">
   <tbody>
     <tr>
-      <td>Filename</td>
-      <td>MLEname</td>
-      <td>Evaluated Value</td>
-      <td>Delete</td>
+      <td>Test Set: <b>{{ filename }}</b></td>
+      <td>Train Set: <b>train.csv</b></td>
+      <br>
+      {% for vals in sortedVals %}
+    <tr>
+      <td>{{ vals.0 }}:</td>
+      <td> {{ vals.1 }}</td>
+      {% endfor %}
+      <br>
+    </tr> 
     </tr>
     {% for file in files %}
     <tr>
       <td><a href="{{ file.file.url }}">{{ file.file.url }}</a></td>
       <td>{{ file.upload_method }}</td>
-      <td><h4>computed value here update</h4></td>
       <td>
         <a href="{% url 'file_upload:delete_file' file.id %}"
           ><button type="submit" class="btn btn-danger btn-sm">
