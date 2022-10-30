@@ -2,17 +2,26 @@ from django.shortcuts import render, redirect
 from .models import File
 from .forms import FileUploadForm
 import os
+import sys
 import uuid
 from django.http import JsonResponse
 from django.template.defaultfilters import filesizeformat
 from django.views.generic import TemplateView, ListView, CreateView
 from django.core.files.storage import FileSystemStorage
 
+sys.path.append("..")
+sys.path.append(".")
+from file_upload.modeltesting import *
+
 # Show file list
 def file_list(request):
-    #files = File.objects.all().order_by("-id")
+    filename = os.path.split(findnewestfile("../tsfc/solutions/files/"))[1]
+    newestfilepath = str(findnewestfile("../tsfc/solutions/files/"))
+    listVals = testandtrain(newestfilepath)
+    sortedVals = sortVals(listVals[0], listVals[1])
+    files = File.objects.all().order_by("-id")
     files = File.objects.order_by('-id')   
-    return render(request, 'file_list.html', {'files': files})
+    return render(request, 'file_list.html', {'sortedVals': sortedVals, 'filename': filename, 'files': files})
 
 # Regular file upload without using ModelForm
 def file_upload(request):
