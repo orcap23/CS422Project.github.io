@@ -1,0 +1,21 @@
+body {
+    background-color: lightblue;
+    font-family:monospace;
+    color:white;
+    
+    
+    
+  }
+ 
+  td.button{
+    position: absolute;
+    top:50%;
+    background-color:#0a0a23;
+  }
+  table, th, td {
+    border: 1px solid;
+  }
+ 
+  h4{
+    font-size:larger;
+  }
